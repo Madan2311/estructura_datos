@@ -27,6 +27,15 @@ class Punto8:
                 
                 while categoriaProducto == "Invalido":
                     categoria = input("ingrese la categoria del producto: \n1. carnicos. \n2. lacteos. \n3. granos. \n")
+                    match categoria:
+                        case "1":
+                            categoriaProducto = "Grande"
+                        case "2":
+                            categoriaProducto = "Mediano"
+                        case "3":
+                            categoriaProducto = "Pequeño"
+                        case _:
+                            categoriaProducto = "Invalido"
 
                 print("           ")
                 inventario = {
@@ -42,3 +51,9 @@ class Punto8:
         for x in range(len(self.matriz)):
             for z in self.matriz[x]:
                 print(z)
+                
+tamano = int(input("ingrese el tamaño de la matriz: "))
+comidas = Punto8(tamano)
+comidas.crearMatriz()
+print("***************************************")
+comidas.mostrarMatriz()
